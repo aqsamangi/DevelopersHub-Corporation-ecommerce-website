@@ -1,0 +1,74 @@
+/* Roboto (self-hosted, latin subset) */
+@font-face { font-family: 'Roboto'; font-weight: 300; font-style: normal; font-display: swap; src: url('../fonts/roboto-latin-300-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Roboto'; font-weight: 400; font-style: normal; font-display: swap; src: url('../fonts/roboto-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Roboto'; font-weight: 500; font-style: normal; font-display: swap; src: url('../fonts/roboto-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Roboto'; font-weight: 700; font-style: normal; font-display: swap; src: url('../fonts/roboto-latin-700-normal.woff2') format('woff2'); }
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-white text-ink antialiased; }
+  img { @apply max-w-full; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-primary; outline-style: solid; }
+  input[type='number']::-webkit-inner-spin-button { opacity: 1; }
+}
+
+@layer components {
+  .wrap { @apply mx-auto w-full max-w-[1280px] px-4; }
+
+  /* buttons */
+  .btn { @apply inline-flex items-center justify-center gap-2 rounded-md px-4 py-2 text-sm font-medium transition-colors disabled:cursor-not-allowed disabled:opacity-50; }
+  .btn-primary { @apply btn bg-primary text-white hover:bg-primary-dark; }
+  .btn-outline { @apply btn border border-gray-300 bg-white text-primary hover:bg-primary-light; }
+  .btn-ghost { @apply btn bg-white text-ink hover:bg-gray-100; }
+  .btn-danger-outline { @apply btn border border-gray-300 bg-white text-red-600 hover:bg-red-50; }
+
+  /* form controls */
+  .field { @apply block w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm placeholder:text-gray-400 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary; }
+  .field.is-invalid { @apply border-red-500 focus:border-red-500 focus:ring-red-500; }
+  .field-error { @apply mt-1 text-xs text-red-600; }
+  .label { @apply mb-1 block text-sm font-medium text-gray-700; }
+
+  /* surfaces */
+  .box { @apply rounded-md border border-gray-300 bg-white; }
+  .box-soft { @apply rounded-md border border-gray-200 bg-white; }
+
+  /* product card (grid) */
+  .p-card { @apply relative flex flex-col rounded-md border border-gray-200 bg-white p-3 transition-shadow hover:shadow-pop; }
+  .p-img { @apply mx-auto aspect-square w-full max-w-[200px] object-contain; }
+
+  .tag-off { @apply inline-block rounded-full bg-red-100 px-3 py-1 text-xs font-semibold text-red-600; }
+  .stars { @apply inline-flex gap-0.5 text-[13px] text-amber-400; }
+
+  /* dropdown menus */
+  .menu { @apply absolute z-40 hidden min-w-[190px] rounded-md border border-gray-200 bg-white py-2 shadow-pop; }
+  .menu.open { @apply block; }
+  .menu a, .menu button.menu-item { @apply block w-full px-4 py-2 text-left text-sm text-gray-700 hover:bg-primary-light hover:text-primary; }
+}
+
+/* Hide scrollbars on horizontal scrollers (mobile chips etc.) */
+.no-scrollbar { scrollbar-width: none; }
+.no-scrollbar::-webkit-scrollbar { display: none; }
+
+/* Toast */
+#toast-region { position: fixed; left: 50%; bottom: 24px; transform: translateX(-50%); z-index: 100; display: flex; flex-direction: column; gap: 8px; align-items: center; pointer-events: none; }
+.toast { pointer-events: auto; background: #111827; color: #fff; padding: 10px 16px; border-radius: 8px; font-size: 14px; box-shadow: 0 8px 24px rgba(0,0,0,.25); animation: toast-in .2s ease-out; }
+.toast a { color: #93c5fd; text-decoration: underline; margin-left: 10px; }
+@keyframes toast-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+
+/* Product detail zoom */
+.zoom-box { overflow: hidden; cursor: zoom-in; }
+.zoom-box img { transition: transform .15s ease-out; transform-origin: center; }
+@media (hover: hover) { .zoom-box:hover img { transform: scale(1.6); } }
+
+/* Mobile app-frame (mobile-*.html) */
+.m-frame { max-width: 480px; margin-inline: auto; background: #fff; min-height: 100vh; position: relative; box-shadow: 0 0 0 1px #e5e7eb; }
+.safe-bottom { padding-bottom: calc(env(safe-area-inset-bottom, 0px)); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
