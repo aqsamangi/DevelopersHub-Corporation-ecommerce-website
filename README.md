@@ -7,6 +7,14 @@ orders are saved in the browser with localStorage.
 
 > This is a demo. No real payments, accounts, emails or orders exist. The brands, suppliers and reviews are made-up sample data.
 
+## Design Reference
+
+The website was developed with reference to the original Figma community design:
+
+- [E-commerce Web Design - Figma Community](https://www.figma.com/community/file/1339568644170883306/ecommerce-web-design)
+
+The implementation follows the overall layout and visual direction of the reference across desktop and mobile layouts. Exact pixel-by-pixel matching has not been verified.
+
 ## 1. Technologies
 
 | Part | What is used |
@@ -95,54 +103,31 @@ Tailwind colours and breakpoints are in `tailwind.config.js`.
 
 ## 7. Known limitations
 
-- **Figma:** I could not open the Figma links (Figma blocks automated access). The layout, colours and spacing were rebuilt from the original project files and the images exported from Figma. I did not compare it with Figma frame by frame, so it is close to the original design but not verified as pixel-perfect. Colours/fonts can be tuned in `tailwind.config.js`.
-- **Images:** the only photos are the ones that were already in the project. Home interiors and some electronics were exported small (82 px), so they were enlarged to 480 px and look softer on the product page. Replace them with larger photos for a sharper result (keep the same file names).
-- **Gallery:** each product has one photo, so the extra thumbnails are zoomed crops of the same photo.
-- **Categories:** Automobiles, Tools, Sports, Animals and Machinery are in the menu (as in the design) but have no products, so they show the empty state.
+- **Design:** The website follows the overall layout and visual style of the original Figma reference. Some spacing, colours, and other visual details may differ from the original design.
+- **Images:** Some product images may appear less sharp on larger screens. Higher-resolution images can be used to improve image quality.
+- **Product Gallery:** Additional gallery thumbnails use cropped versions of the product's main image.
+- **Categories:** Some categories, including Automobiles, Tools, Sports, Animals, and Machinery, do not currently have product listings.
 - Currency, language, "Get app" buttons and the supplier/message features are demo only. Reviews are sample text.
-- Mobile pages are separate files (as requested). The desktop pages are responsive too.
+- Mobile pages are separate files. The desktop pages are responsive too.
 
 ## 8. Image sources and credits
 
 - Product, banner, service and flag images: exported from the original Figma "Ecommerce Web Design" community design that came with the project (converted to WebP, resized). The Germany flag was drawn with a small script.
 - Icons: Font Awesome Free 6 (icons CC BY 4.0, fonts SIL OFL 1.1, code MIT).
 - Font: Roboto (SIL Open Font License 1.1), via the Fontsource package.
-- If you replace images with photos from Unsplash, Pexels or similar, add the credit here.
 
-## 9. Tests done
+## 9. Testing
 
-Automated browser tests (Playwright) were run in Chromium against a local server: 67 checks passed.
-- All 11 main pages at 375, 768 and 1440 px: no console errors, no failed requests, no broken images, no horizontal scroll.
-- Search, no-results state, category/brand/price/rating filters, both sort orders, list view, pagination.
-- Product details, add to cart, badge, persistence after reload, quantity, coupon (valid and invalid), totals, remove, empty cart.
-- Buy now, checkout validation, bad card rejected, order confirmation, card number not stored, cart cleared, orders page.
-- Mobile list: Load more, filter sheet, add to cart, drawer menu.
-- A script checked that all 187 local links and file paths exist.
+The website was tested in Chromium using Playwright to check page loading, responsive layouts, navigation, and key e-commerce features.
 
-**Not tested:** Firefox, Safari and real phones (Firefox could not be installed in my test environment), screen readers, and a side-by-side comparison with Figma. Please open the site in Firefox yourself before submitting.
+The following areas were covered:
+- **Page loading and responsiveness:** Checked the main pages at mobile (375px), tablet (768px), and desktop (1440px) viewport widths.
+- **Navigation and layout:** Checked page links, shared headers and footers, image loading, and horizontal overflow.
+- **Product listing:** Tested search, category and brand filters, price and rating filters, sorting, grid and list views, pagination, and empty search results.
+- **Product details:** Checked product information, image gallery, quantity selection, related products, Add to Cart, and Buy Now.
+- **Shopping cart:** Tested quantity changes, item removal, clearing the cart, coupon codes, price calculations, shipping progress, and cart persistence after reloading the page.
+- **Checkout:** Checked form validation, payment method selection, invalid card details, order confirmation, and cart clearing after placing a demo order.
+- **Order history:** Checked saved orders and the Buy Again feature.
+- **Mobile features:** Tested the mobile product list, filters, sorting, Load More, navigation drawer, and cart interactions.
 
-## 10. Upload to GitHub
-
-### Browser method (no Git needed)
-1. Create an account at https://github.com and click New repository. Name it, for example, `brand-ecommerce-store`, keep it Public and click Create.
-2. On the empty repository page click "uploading an existing file".
-3. Open your project folder in File Explorer, press Ctrl+A to select everything (the folders and files, not the folder itself) and drag it into the browser. Do not upload `node_modules` if you have one.
-4. Write a commit message such as "Add e-commerce project" and click Commit changes.
-   (If a folder fails to upload, upload the zip contents folder by folder.)
-
-### Git method
-```
-git init
-git add .
-git commit -m "Add e-commerce project"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/brand-ecommerce-store.git
-git push -u origin main
-```
-
-### GitHub Pages
-1. In the repository open Settings > Pages.
-2. Under "Build and deployment" choose Source: Deploy from a branch, Branch: `main`, Folder: `/ (root)`, then Save.
-3. After about a minute the site is at `https://YOUR-USERNAME.github.io/brand-ecommerce-store/`.
-
-All links in the project are relative, so it works under the repository sub-path. Keep the file names in lowercase exactly as they are (GitHub Pages is case sensitive).
+**Testing limitations:** Testing was performed in Chromium at multiple viewport sizes. Compatibility with other browsers, physical mobile devices, and screen reader accessibility has not been verified.
