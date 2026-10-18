@@ -13,7 +13,7 @@ The website was developed with reference to the original Figma community design:
 
 - [E-commerce Web Design - Figma Community](https://www.figma.com/community/file/1339568644170883306/ecommerce-web-design)
 
-The implementation follows the overall layout and visual direction of the reference across desktop and mobile layouts. Exact pixel-by-pixel matching has not been verified.
+The implementation follows the overall layout and visual direction of the reference across desktop and mobile layouts.
 
 ## 1. Technologies
 
@@ -105,7 +105,7 @@ Tailwind colours and breakpoints are in `tailwind.config.js`.
 
 - **Design:** The website follows the overall layout and visual style of the original Figma reference. Some spacing, colours, and other visual details may differ from the original design.
 - **Images:** Some product images may appear less sharp on larger screens. Higher-resolution images can be used to improve image quality.
-- **Product Gallery:** Additional gallery thumbnails use cropped versions of the product's main image.
+- **Product gallery:** Additional gallery thumbnails use cropped versions of the product's main image.
 - **Categories:** Some categories, including Automobiles, Tools, Sports, Animals, and Machinery, do not currently have product listings.
 - Currency, language, "Get app" buttons and the supplier/message features are demo only. Reviews are sample text.
 - Mobile pages are separate files. The desktop pages are responsive too.
@@ -130,4 +130,4 @@ The following areas were covered:
 - **Order history:** Checked saved orders and the Buy Again feature.
 - **Mobile features:** Tested the mobile product list, filters, sorting, Load More, navigation drawer, and cart interactions.
 
-**Testing limitations:** Testing was performed in Chromium at multiple viewport sizes. Compatibility with other browsers, physical mobile devices, and screen reader accessibility has not been verified.
+**Testing limitations:** Testing was performed in Chromium at multiple viewport sizes. Compatibility with other browsers, physical mobile devices, and screen reader accessibility has not been tested.
