@@ -1,0 +1,19 @@
+# dependencies
+node_modules/
+
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/*
+!.vscode/settings.json
+.idea/
+
+# logs and local env files
+*.log
+.env
+.env.*
+
+# temporary files
+*.tmp
+*.bak

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Items | Brand mobile</title>
+  <meta name="description" content="Mobile product list with search, filters, sorting and load more.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+</head>
+<body data-page="mlist" class="bg-gray-200">
+  <div class="m-frame pb-20">
+    <div id="m-header" data-back="mobile-main.html" data-title="Items"></div>
+    <main id="main">
+      <div class="sticky top-[104px] z-20 flex items-center gap-2 border-b border-gray-100 bg-white px-3 py-2">
+        <label for="m-sort" class="sr-only">Sort by</label>
+        <select id="m-sort" class="field !w-auto flex-1 !py-1.5"></select>
+        <button type="button" id="m-filter-open" class="btn-outline !py-1.5"><i class="fa-solid fa-sliders"></i> Filter</button>
+        <button type="button" id="m-view" class="btn-ghost border border-gray-300 !px-3 !py-1.5" aria-label="Switch to grid view"><i class="fa-solid fa-table-cells-large"></i></button>
+      </div>
+      <p id="m-count" class="px-3 pt-3 text-sm text-gray-500" aria-live="polite"></p>
+      <div id="m-chips" class="flex flex-wrap gap-2 px-3 pt-2"></div>
+      <div id="m-results" class="px-3 pb-2"></div>
+      <div class="px-3 pb-4 text-center"><button type="button" id="m-more" class="btn-outline w-full">Load more</button></div>
+    </main>
+    <div id="m-nav"></div>
+
+    <!-- filter bottom sheet -->
+    <div id="sheet" class="fixed inset-0 z-50 hidden" role="dialog" aria-modal="true" aria-label="Filters">
+      <div class="absolute inset-0 bg-black/50" data-sheet-close></div>
+      <div class="absolute bottom-0 left-1/2 max-h-[85vh] w-full max-w-[480px] -translate-x-1/2 overflow-y-auto rounded-t-2xl bg-white p-4">
+        <div class="mb-3 flex items-center justify-between"><h2 class="text-lg font-semibold">Filters</h2><button type="button" class="p-2 text-gray-500" data-sheet-close aria-label="Close filters"><i class="fa-solid fa-xmark text-xl"></i></button></div>
+        <label class="label" for="s-cat">Category</label><select id="s-cat" class="field"></select>
+        <fieldset class="mt-4"><legend class="label">Brands</legend><div id="s-brands" class="grid grid-cols-2 gap-2 text-sm"></div></fieldset>
+        <fieldset class="mt-4"><legend class="label">Price range (USD)</legend><div class="grid grid-cols-2 gap-2"><input id="s-min" type="number" min="0" inputmode="decimal" class="field" placeholder="Min" aria-label="Minimum price"><input id="s-max" type="number" min="0" inputmode="decimal" class="field" placeholder="Max" aria-label="Maximum price"></div><p id="s-err" class="field-error hidden" role="alert"></p></fieldset>
+        <label class="label mt-4" for="s-rate">Minimum rating</label><select id="s-rate" class="field"><option value="0">Any rating</option><option value="4">4 stars &amp; up</option><option value="3">3 stars &amp; up</option></select>
+        <label class="mt-4 flex items-center gap-2 text-sm"><input id="s-deals" type="checkbox" class="h-4 w-4 accent-primary"> Hot offers only</label>
+        <div class="mt-5 grid grid-cols-2 gap-2"><button type="button" class="btn-outline py-2.5" id="s-clear">Clear all</button><button type="button" class="btn-primary py-2.5" id="s-apply">Show results</button></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/js/products-data.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/listing-core.js" defer></script>
+  <script src="assets/js/mobile-itemlist.js" defer></script>
+</body>
+</html>

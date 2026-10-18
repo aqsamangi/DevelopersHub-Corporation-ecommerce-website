@@ -1,0 +1,14 @@
+{
+  "name": "brand-ecommerce-storefront",
+  "version": "1.0.0",
+  "description": "Static e-commerce storefront (HTML, Tailwind CSS, vanilla JavaScript) built for a frontend development internship.",
+  "private": true,
+  "scripts": {
+    "build:css": "tailwindcss -c tailwind.config.js -i src/input.css -o assets/css/tailwind.css --minify",
+    "watch:css": "tailwindcss -c tailwind.config.js -i src/input.css -o assets/css/tailwind.css --watch"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.17"
+  }
+}

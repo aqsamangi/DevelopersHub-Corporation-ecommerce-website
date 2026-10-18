@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Messages | Brand</title>
+  <meta name="description" content="Demo supplier messages.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+</head>
+<body data-page="msg" class="bg-page">
+  <div id="site-header"></div>
+  <main id="main" class="wrap py-5">
+    <h1 class="mb-1 text-2xl font-bold">Messages</h1>
+    <p class="mb-4 text-sm text-gray-500">Demo chat: replies are canned examples, and messages stay in this browser.</p>
+    <div class="box grid min-h-[480px] grid-cols-1 overflow-hidden md:grid-cols-[260px_1fr]">
+      <ul id="threads" class="min-w-0 border-b border-gray-200 md:border-b-0 md:border-r" aria-label="Conversations"></ul>
+      <section class="flex min-w-0 flex-col" aria-label="Conversation">
+        <header id="thread-head" class="border-b border-gray-200 px-4 py-3 font-medium"></header>
+        <div id="thread-body" class="flex-1 space-y-3 overflow-y-auto bg-gray-50 p-4" style="max-height:420px" aria-live="polite"></div>
+        <form id="msg-form" class="flex gap-2 border-t border-gray-200 p-3" novalidate>
+          <label for="msg-input" class="sr-only">Type a message</label>
+          <input id="msg-input" class="field" placeholder="Type a message" maxlength="300" autocomplete="off">
+          <button class="btn-primary" type="submit"><i class="fa-solid fa-paper-plane"></i><span class="sr-only sm:not-sr-only">Send</span></button>
+        </form>
+      </section>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+
+  <script src="assets/js/products-data.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/msg.js" defer></script>
+</body>
+</html>

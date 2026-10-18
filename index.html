@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand | Online marketplace</title>
+  <meta name="description" content="Brand is a demo e-commerce storefront: deals, home and outdoor products, consumer electronics and recommended items.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+</head>
+<body data-page="home" class="bg-page">
+  <div id="site-header"></div>
+
+  <main id="main" class="wrap py-5">
+    <!-- Hero: categories | banner | user cards -->
+    <section class="flex flex-col gap-5 lg:flex-row" aria-label="Featured">
+      <nav class="box hidden w-[250px] shrink-0 p-2 lg:block" aria-label="Categories">
+        <ul id="side-cats" class="text-[15px]"></ul>
+      </nav>
+
+      <div class="relative flex min-h-[260px] flex-1 items-center overflow-hidden rounded-md bg-[#9ee6d0] bg-cover bg-right sm:min-h-[400px]" style="background-image:url('assets/img/banners/hero-electronics.webp')">
+        <div class="absolute inset-0 bg-gradient-to-r from-[#9ee6d0] via-[#9ee6d0]/70 to-transparent sm:via-transparent"></div>
+        <div class="relative px-6 py-8 sm:px-10">
+          <p class="text-2xl font-light sm:text-[28px]">Latest trending</p>
+          <h1 class="text-2xl font-bold sm:text-[32px]">Electronic items</h1>
+          <a href="products.html?category=tech" class="btn mt-5 bg-white px-5 py-2.5 text-[15px] font-medium shadow-card hover:bg-gray-50">Learn more</a>
+        </div>
+      </div>
+
+      <aside class="grid shrink-0 gap-2 sm:grid-cols-3 lg:w-[200px] lg:grid-cols-1" aria-label="Account and offers">
+        <div class="rounded-md bg-primary-light p-4 sm:col-span-3 lg:col-span-1">
+          <div class="flex items-center gap-3"><img src="assets/img/icons/avatar.webp" alt="" width="44" height="44" class="rounded-full"><p class="text-sm">Hi, user, let’s get started</p></div>
+          <div class="mt-4 grid grid-cols-2 gap-2 lg:grid-cols-1">
+            <a href="login.html#register" class="btn-primary">Join now</a>
+            <a href="login.html" class="btn-outline !border-primary">Log in</a>
+          </div>
+        </div>
+        <a href="products.html?deals=1" class="block rounded-md bg-accent p-4 text-sm font-medium text-white hover:opacity-95 sm:col-span-3 lg:col-span-1 lg:h-[88px]">Get US $10 off<br>with a new supplier</a>
+        <a href="#quote" class="block rounded-md bg-mint p-4 text-sm font-medium text-white hover:opacity-95 sm:col-span-3 lg:col-span-1 lg:h-[88px]">Send quotes with<br>supplier preferences</a>
+      </aside>
+    </section>
+
+    <!-- Deals -->
+    <section class="box mt-5 flex flex-col overflow-hidden md:flex-row" aria-labelledby="deals-title">
+      <div class="shrink-0 border-b border-gray-200 p-4 md:w-[240px] md:border-b-0 md:border-r">
+        <h2 id="deals-title" class="text-lg font-medium">Deals and offers</h2>
+        <p class="text-sm text-gray-400">Hygiene equipments</p>
+        <div class="mt-4 flex gap-2" role="timer" aria-label="Time left on current deals">
+          <div class="flex h-[48px] w-[46px] flex-col items-center justify-center rounded-md bg-gray-600 text-white"><b id="days" class="text-sm leading-4">0</b><span class="text-xs">Days</span></div>
+          <div class="flex h-[48px] w-[46px] flex-col items-center justify-center rounded-md bg-gray-600 text-white"><b id="hours" class="text-sm leading-4">0</b><span class="text-xs">Hour</span></div>
+          <div class="flex h-[48px] w-[46px] flex-col items-center justify-center rounded-md bg-gray-600 text-white"><b id="minutes" class="text-sm leading-4">0</b><span class="text-xs">Min</span></div>
+          <div class="flex h-[48px] w-[46px] flex-col items-center justify-center rounded-md bg-gray-600 text-white"><b id="seconds" class="text-sm leading-4">0</b><span class="text-xs">Sec</span></div>
+        </div>
+      </div>
+      <ul id="deals" class="grid flex-1 grid-cols-2 sm:grid-cols-3 lg:grid-cols-5"></ul>
+    </section>
+
+    <!-- Home and outdoors -->
+    <section class="box mt-5 flex flex-col overflow-hidden md:flex-row" aria-labelledby="home-title">
+      <div class="relative min-h-[150px] shrink-0 bg-[#f3e9d7] bg-cover bg-center p-5 md:w-[280px]" style="background-image:url('assets/img/banners/home-outdoors.webp')">
+        <h2 id="home-title" class="text-xl font-bold leading-6">Home and<br>outdoors</h2>
+        <a href="products.html?category=home" class="btn mt-4 bg-white px-4 shadow-card hover:bg-gray-50">Source now</a>
+      </div>
+      <ul id="block-home" class="grid flex-1 grid-cols-2 lg:grid-cols-4"></ul>
+    </section>
+
+    <!-- Consumer electronics -->
+    <section class="box mt-5 flex flex-col overflow-hidden md:flex-row" aria-labelledby="elec-title">
+      <div class="relative min-h-[150px] shrink-0 bg-[#dde4ee] bg-cover bg-center p-5 md:w-[280px]" style="background-image:url('assets/img/banners/consumer-electronics.webp')">
+        <h2 id="elec-title" class="text-xl font-bold leading-6">Consumer<br>electronics and<br>gadgets</h2>
+        <a href="products.html?category=tech" class="btn mt-4 bg-white px-4 shadow-card hover:bg-gray-50">Source now</a>
+      </div>
+      <ul id="block-elec" class="grid flex-1 grid-cols-2 lg:grid-cols-4"></ul>
+    </section>
+
+    <!-- Quote to suppliers -->
+    <section id="quote" class="relative mt-5 overflow-hidden rounded-md bg-primary bg-cover bg-center" style="background-image:url('assets/img/banners/quote-bg.webp')" aria-labelledby="quote-title">
+      <div class="flex flex-col items-start gap-6 px-6 py-8 md:flex-row md:justify-between md:px-14">
+        <div class="max-w-md pt-2 text-white">
+          <h2 id="quote-title" class="text-[28px] font-bold leading-8">An easy way to send requests to all suppliers</h2>
+          <p class="mt-3 max-w-[260px] text-base leading-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, suscipit.</p>
+        </div>
+        <form id="quote-form" class="w-full max-w-[400px] rounded-md bg-white p-5 shadow-pop" novalidate>
+          <h3 class="text-lg font-semibold">Send quotes to suppliers</h3>
+          <div class="mt-3">
+            <label for="q-item" class="sr-only">What item you need?</label>
+            <input id="q-item" class="field" placeholder="What item you need?" maxlength="80">
+            <p class="field-error hidden" data-err></p>
+          </div>
+          <label for="q-details" class="sr-only">Type more details</label>
+          <textarea id="q-details" class="field mt-2 h-24 resize-y" placeholder="Type more details" maxlength="400"></textarea>
+          <div class="mt-2 flex gap-2">
+            <div class="flex-1">
+              <label for="q-qty" class="sr-only">Quantity</label>
+              <input id="q-qty" type="number" min="1" max="100000" class="field" placeholder="Quantity">
+              <p class="field-error hidden" data-err></p>
+            </div>
+            <label for="q-unit" class="sr-only">Unit</label>
+            <select id="q-unit" class="field !w-24"><option>Pcs</option><option>Kg</option><option>Boxes</option></select>
+          </div>
+          <button type="submit" class="btn mt-3 bg-primary-dark px-4 text-white hover:bg-blue-800">Send inquiry</button>
+          <p id="quote-msg" class="mt-2 hidden text-sm text-green-600" role="status"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Recommended -->
+    <section class="mt-6" aria-labelledby="rec-title">
+      <h2 id="rec-title" class="mb-4 text-2xl font-bold">Recommended items</h2>
+      <div id="recommended" class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5"></div>
+      <div class="mt-5 text-center"><a href="products.html" class="btn-outline">View all products <i class="fa-solid fa-arrow-right"></i></a></div>
+    </section>
+
+    <!-- Extra services -->
+    <section class="mt-8" aria-labelledby="svc-title">
+      <h2 id="svc-title" class="mb-4 text-2xl font-bold">Our extra services</h2>
+      <ul class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <li class="box-soft overflow-hidden"><div class="relative"><img src="assets/img/services/source-hubs.webp" alt="" width="280" height="120" loading="lazy" class="h-[120px] w-full object-cover"><span class="absolute -bottom-5 right-4 flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-primary-tint"><img src="assets/img/icons/search.png" alt="" width="24" height="24"></span></div><p class="px-3 pb-3 pt-4 text-[15px]">Source from<br>Industry Hubs</p></li>
+        <li class="box-soft overflow-hidden"><div class="relative"><img src="assets/img/services/customize.webp" alt="" width="280" height="120" loading="lazy" class="h-[120px] w-full object-cover"><span class="absolute -bottom-5 right-4 flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-primary-tint"><img src="assets/img/icons/inventory_2.png" alt="" width="24" height="24"></span></div><p class="px-3 pb-3 pt-4 text-[15px]">Customize Your<br>Products</p></li>
+        <li class="box-soft overflow-hidden"><div class="relative"><img src="assets/img/services/shipping.webp" alt="" width="280" height="120" loading="lazy" class="h-[120px] w-full object-cover"><span class="absolute -bottom-5 right-4 flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-primary-tint"><img src="assets/img/icons/send.png" alt="" width="24" height="24"></span></div><p class="px-3 pb-3 pt-4 text-[15px]">Fast, reliable<br>shipping by ocean or air</p></li>
+        <li class="box-soft overflow-hidden"><div class="relative"><img src="assets/img/services/inspection.webp" alt="" width="280" height="120" loading="lazy" class="h-[120px] w-full object-cover"><span class="absolute -bottom-5 right-4 flex h-11 w-11 items-center justify-center rounded-full border-2 border-white bg-primary-tint"><img src="assets/img/icons/security.png" alt="" width="24" height="24"></span></div><p class="px-3 pb-3 pt-4 text-[15px]">Product Monitor<br>and inspection</p></li>
+      </ul>
+    </section>
+
+    <!-- Suppliers by region -->
+    <section class="mt-8 pb-4" aria-labelledby="reg-title">
+      <h2 id="reg-title" class="mb-4 text-2xl font-bold">Suppliers by region</h2>
+      <ul id="regions" class="grid grid-cols-2 gap-x-4 gap-y-5 sm:grid-cols-3 lg:grid-cols-5"></ul>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/products-data.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/home.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign in | Brand</title>
+  <meta name="description" content="Sign in or create a demo account.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+</head>
+<body data-page="login" class="bg-page">
+  <div id="site-header"></div>
+  <main id="main" class="wrap flex justify-center py-10">
+    <section class="box w-full max-w-md p-6" aria-labelledby="auth-title">
+      <div role="tablist" aria-label="Account" class="mb-5 grid grid-cols-2 rounded-md bg-gray-100 p-1 text-sm font-medium">
+        <button type="button" role="tab" id="tab-login" aria-selected="true" aria-controls="form-login" class="rounded py-2">Sign in</button>
+        <button type="button" role="tab" id="tab-register" aria-selected="false" aria-controls="form-register" class="rounded py-2">Register</button>
+      </div>
+      <h1 id="auth-title" class="mb-1 text-xl font-bold">Welcome back</h1>
+      <p class="mb-4 text-sm text-gray-500">Demo only: no account is created and nothing is sent to a server.</p>
+
+      <form id="form-login" role="tabpanel" aria-labelledby="tab-login" class="space-y-4" novalidate>
+        <div><label class="label" for="l-email">Email</label><input id="l-email" type="email" class="field" autocomplete="email"><p class="field-error hidden" data-err role="alert"></p></div>
+        <div><label class="label" for="l-pass">Password</label><input id="l-pass" type="password" class="field" autocomplete="current-password"><p class="field-error hidden" data-err role="alert"></p></div>
+        <button class="btn-primary w-full py-2.5" type="submit">Sign in</button>
+      </form>
+
+      <form id="form-register" role="tabpanel" aria-labelledby="tab-register" class="hidden space-y-4" novalidate>
+        <div><label class="label" for="r-name">Full name</label><input id="r-name" class="field" autocomplete="name"><p class="field-error hidden" data-err role="alert"></p></div>
+        <div><label class="label" for="r-email">Email</label><input id="r-email" type="email" class="field" autocomplete="email"><p class="field-error hidden" data-err role="alert"></p></div>
+        <div><label class="label" for="r-pass">Password (8+ characters)</label><input id="r-pass" type="password" class="field" autocomplete="new-password"><p class="field-error hidden" data-err role="alert"></p></div>
+        <div><label class="label" for="r-pass2">Confirm password</label><input id="r-pass2" type="password" class="field" autocomplete="new-password"><p class="field-error hidden" data-err role="alert"></p></div>
+        <button class="btn-primary w-full py-2.5" type="submit">Create account</button>
+      </form>
+      <p id="auth-msg" class="mt-4 hidden rounded-md bg-green-50 px-3 py-2 text-sm text-green-700" role="status"></p>
+    </section>
+  </main>
+  <div id="site-footer"></div>
+
+  <script src="assets/js/products-data.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/login.js" defer></script>
+</body>
+</html>

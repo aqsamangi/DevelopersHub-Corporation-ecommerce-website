@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Brand | Mobile home</title>
+  <meta name="description" content="Mobile version of the Brand demo store home page.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+</head>
+<body data-page="mhome" class="bg-gray-200">
+  <div class="m-frame bg-page pb-20">
+    <div id="m-header"></div>
+    <main id="main">
+      <nav aria-label="Categories" class="bg-white pb-3"><ul id="m-chips" class="no-scrollbar flex gap-2 overflow-x-auto px-3"></ul></nav>
+
+      <section class="px-3 pt-3" aria-label="Featured">
+        <div class="relative flex min-h-[170px] items-center overflow-hidden rounded-md bg-[#9ee6d0] bg-cover bg-right" style="background-image:url('assets/img/banners/hero-electronics.webp')">
+          <div class="absolute inset-0 bg-gradient-to-r from-[#9ee6d0] via-[#9ee6d0]/60 to-transparent"></div>
+          <div class="relative p-5"><p class="text-lg font-light">Latest trending</p><h1 class="text-2xl font-bold leading-7">Electronic<br>items</h1>
+            <a href="mobile-itemlist.html?category=tech" class="btn mt-3 bg-white px-4 py-1.5 shadow-card">Learn more</a></div>
+        </div>
+        <div class="mt-2 grid grid-cols-2 gap-2 text-sm font-medium text-white">
+          <a href="login.html#register" class="rounded-md bg-primary p-3 text-center">Join now</a>
+          <a href="mobile-itemlist.html?deals=1" class="rounded-md bg-accent p-3 text-center">Get $10 off</a>
+        </div>
+      </section>
+
+      <section class="mt-3 bg-white py-3" aria-labelledby="m-deals">
+        <div class="flex items-center justify-between px-3"><div><h2 id="m-deals" class="font-semibold">Deals and offers</h2><p class="text-xs text-gray-400">Ends in <span id="m-timer" class="font-medium text-red-600"></span></p></div>
+          <a href="mobile-itemlist.html?deals=1" class="text-sm text-primary">See all</a></div>
+        <ul id="m-deals-list" class="no-scrollbar mt-3 flex gap-3 overflow-x-auto px-3"></ul>
+      </section>
+
+      <section class="mt-3 bg-white p-3" aria-labelledby="m-home"><div class="mb-3 flex items-center justify-between"><h2 id="m-home" class="font-semibold">Home and outdoors</h2><a href="mobile-itemlist.html?category=home" class="text-sm text-primary">Source now</a></div><div id="m-home-grid" class="grid grid-cols-2 gap-2"></div></section>
+      <section class="mt-3 bg-white p-3" aria-labelledby="m-elec"><div class="mb-3 flex items-center justify-between"><h2 id="m-elec" class="font-semibold">Consumer electronics</h2><a href="mobile-itemlist.html?category=tech" class="text-sm text-primary">Source now</a></div><div id="m-elec-grid" class="grid grid-cols-2 gap-2"></div></section>
+
+      <section class="relative mt-3 overflow-hidden bg-primary bg-cover bg-center px-4 py-6 text-white" style="background-image:url('assets/img/banners/quote-bg.webp')" aria-labelledby="m-quote">
+        <h2 id="m-quote" class="text-xl font-bold leading-6">An easy way to send requests to all suppliers</h2>
+        <p class="mt-2 text-sm">Describe what you need and compare offers.</p>
+        <a href="index.html#quote" class="btn mt-4 bg-white px-4 text-primary-dark">Send inquiry</a>
+      </section>
+
+      <section class="mt-3 bg-white p-3" aria-labelledby="m-rec"><h2 id="m-rec" class="mb-3 font-semibold">Recommended items</h2><div id="m-rec-grid" class="grid grid-cols-2 gap-2"></div>
+        <a href="mobile-itemlist.html" class="btn-outline mt-4 w-full">View all products</a></section>
+
+      <section class="mt-3 bg-white p-3" aria-labelledby="m-svc"><h2 id="m-svc" class="mb-3 font-semibold">Our extra services</h2>
+        <ul class="no-scrollbar flex gap-3 overflow-x-auto">
+          <li class="w-56 shrink-0 overflow-hidden rounded-md border border-gray-200"><img src="assets/img/services/source-hubs.webp" alt="" width="280" height="120" loading="lazy" class="h-24 w-full object-cover"><p class="p-2 text-sm">Source from Industry Hubs</p></li>
+          <li class="w-56 shrink-0 overflow-hidden rounded-md border border-gray-200"><img src="assets/img/services/customize.webp" alt="" width="280" height="120" loading="lazy" class="h-24 w-full object-cover"><p class="p-2 text-sm">Customize Your Products</p></li>
+          <li class="w-56 shrink-0 overflow-hidden rounded-md border border-gray-200"><img src="assets/img/services/shipping.webp" alt="" width="280" height="120" loading="lazy" class="h-24 w-full object-cover"><p class="p-2 text-sm">Fast, reliable shipping by ocean or air</p></li>
+          <li class="w-56 shrink-0 overflow-hidden rounded-md border border-gray-200"><img src="assets/img/services/inspection.webp" alt="" width="280" height="120" loading="lazy" class="h-24 w-full object-cover"><p class="p-2 text-sm">Product monitor and inspection</p></li>
+        </ul></section>
+
+      <footer class="mt-3 bg-white px-4 py-5 text-center text-xs text-gray-500">
+        <p><a class="text-primary" href="help.html">Help center</a> · <a class="text-primary" href="index.html">Desktop site</a></p>
+        <p class="mt-2">© 2026 Brand · Demo storefront</p>
+      </footer>
+    </main>
+    <div id="m-nav"></div>
+  </div>
+
+  <script src="assets/js/products-data.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/mobile-main.js" defer></script>
+</body>
+</html>

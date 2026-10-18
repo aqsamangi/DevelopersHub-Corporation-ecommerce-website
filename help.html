@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Help center | Brand</title>
+  <meta name="description" content="About, shipping, refunds and contact information for the demo store.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+</head>
+<body data-page="help" class="bg-page">
+  <div id="site-header"></div>
+  <main id="main" class="wrap max-w-4xl py-6">
+    <h1 class="mb-6 text-2xl font-bold">Help center</h1>
+    <div class="space-y-5">
+      <section id="about" class="box scroll-mt-4 p-5"><h2 class="mb-2 text-lg font-semibold">About Brand</h2><p class="text-sm leading-6 text-gray-600">Brand is a demo storefront built as a frontend development internship project with HTML, Tailwind CSS and vanilla JavaScript. The products, suppliers, reviews and prices are sample data, and no real orders are taken.</p></section>
+      <section id="shipping" class="box scroll-mt-4 p-5"><h2 class="mb-2 text-lg font-semibold">Shipping</h2><ul class="list-disc space-y-1 pl-5 text-sm leading-6 text-gray-600"><li>Free standard shipping on orders over $100, otherwise a flat $7.99.</li><li>Estimated delivery: 5 to 10 business days.</li><li>You can pick your destination country from the “Ship to” menu in the header.</li></ul><p class="mt-2 text-xs text-gray-400">Demo information only.</p></section>
+      <section id="refund" class="box scroll-mt-4 p-5"><h2 class="mb-2 text-lg font-semibold">Money refund</h2><p class="text-sm leading-6 text-gray-600">Items can be returned within 30 days in their original condition for a full refund of the item price. Demo policy, no real refunds are processed.</p></section>
+      <section id="contact" class="box scroll-mt-4 p-5"><h2 class="mb-3 text-lg font-semibold">Contact us</h2>
+        <form id="contact-form" class="grid gap-3 sm:grid-cols-2" novalidate>
+          <div><label class="label" for="c-name">Name</label><input id="c-name" class="field" autocomplete="name"><p class="field-error hidden" data-err role="alert"></p></div>
+          <div><label class="label" for="c-email">Email</label><input id="c-email" type="email" class="field" autocomplete="email"><p class="field-error hidden" data-err role="alert"></p></div>
+          <div class="sm:col-span-2"><label class="label" for="c-msg">Message</label><textarea id="c-msg" class="field h-28" maxlength="500"></textarea><p class="field-error hidden" data-err role="alert"></p></div>
+          <div class="sm:col-span-2"><button class="btn-primary" type="submit">Send message</button><p id="c-ok" class="mt-2 hidden text-sm text-green-600" role="status">Thanks! This is a demo, so your message was not sent anywhere.</p></div>
+        </form></section>
+    </div>
+  </main>
+  <div id="site-footer"></div>
+
+  <script src="assets/js/products-data.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/help.js" defer></script>
+</body>
+</html>

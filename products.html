@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Brand</title>
+  <meta name="description" content="Browse, search, filter and sort all products in the Brand demo store.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/tailwind.css">
+</head>
+<body data-page="products" class="bg-page">
+  <div id="site-header"></div>
+
+  <main id="main" class="wrap py-5">
+    <nav aria-label="Breadcrumb" class="mb-4 text-sm text-gray-400">
+      <ol class="flex flex-wrap items-center gap-2">
+        <li><a class="hover:text-primary" href="index.html">Home</a></li>
+        <li aria-hidden="true"><i class="fa-solid fa-angle-right text-xs"></i></li>
+        <li><a class="hover:text-primary" href="products.html">Products</a></li>
+        <li id="crumb-cat" class="hidden items-center gap-2"><i class="fa-solid fa-angle-right text-xs" aria-hidden="true"></i><span class="text-ink" aria-current="page"></span></li>
+      </ol>
+    </nav>
+
+    <div class="flex flex-col gap-5 lg:flex-row lg:items-start">
+      <!-- Filters (slide-over on small screens) -->
+      <aside id="filters" class="hidden w-full shrink-0 lg:block lg:w-[240px]" aria-label="Filters">
+        <div id="filters-inner" class="box p-4 max-lg:fixed max-lg:inset-0 max-lg:z-50 max-lg:overflow-y-auto max-lg:rounded-none">
+          <div class="mb-2 flex items-center justify-between lg:hidden">
+            <h2 class="text-lg font-semibold">Filters</h2>
+            <button type="button" id="filters-close" class="p-2 text-gray-500" aria-label="Close filters"><i class="fa-solid fa-xmark text-xl"></i></button>
+          </div>
+
+          <section aria-labelledby="f-cat">
+            <h3 id="f-cat" class="mb-2 text-base font-semibold">Category</h3>
+            <ul id="f-cat-list" class="space-y-1 text-[15px] text-gray-600"></ul>
+            <button type="button" id="f-cat-more" class="mt-1 text-sm text-primary hover:underline">See all</button>
+          </section>
+
+          <hr class="my-4 border-gray-200">
+          <section aria-labelledby="f-brand">
+            <h3 id="f-brand" class="mb-2 text-base font-semibold">Brands</h3>
+            <ul id="f-brand-list" class="space-y-2 text-[15px] text-gray-600"></ul>
+            <button type="button" id="f-brand-more" class="mt-2 text-sm text-primary hover:underline">See all</button>
+          </section>
+
+          <hr class="my-4 border-gray-200">
+          <section aria-labelledby="f-price">
+            <h3 id="f-price" class="mb-3 text-base font-semibold">Price range</h3>
+            <label for="f-range" class="sr-only">Maximum price</label>
+            <input id="f-range" type="range" min="0" step="5" class="w-full accent-primary">
+            <div class="mt-2 grid grid-cols-2 gap-2">
+              <div><label for="f-min" class="text-xs text-gray-500">Min</label><input id="f-min" type="number" min="0" inputmode="decimal" class="field !py-1.5" placeholder="0"></div>
+              <div><label for="f-max" class="text-xs text-gray-500">Max</label><input id="f-max" type="number" min="0" inputmode="decimal" class="field !py-1.5" placeholder="Any"></div>
+            </div>
+            <button type="button" id="f-apply" class="btn-outline mt-3 w-full !py-1.5">Apply</button>
+            <p id="f-price-err" class="field-error hidden" role="alert"></p>
+          </section>
+
+          <hr class="my-4 border-gray-200">
+          <section aria-labelledby="f-rate">
+            <h3 id="f-rate" class="mb-2 text-base font-semibold">Ratings</h3>
+            <ul id="f-rate-list" class="space-y-2 text-[15px]"></ul>
+          </section>
+
+          <button type="button" id="f-clear" class="btn-ghost mt-5 w-full border border-gray-300">Clear all filters</button>
+          <button type="button" id="filters-show" class="btn-primary mt-2 w-full lg:hidden">Show results</button>
+        </div>
+      </aside>
+
+      <!-- Results -->
+      <section class="min-w-0 flex-1" aria-labelledby="results-title" aria-live="polite">
+        <div class="box flex flex-wrap items-center justify-between gap-3 px-4 py-3">
+          <h1 id="results-title" class="text-[15px]"></h1>
+          <div class="flex flex-wrap items-center gap-3">
+            <button type="button" id="filters-open" class="btn-outline !py-1.5 lg:hidden"><i class="fa-solid fa-sliders"></i> Filters</button>
+            <label class="flex items-center gap-2 text-sm text-gray-600"><input id="f-deals" type="checkbox" class="h-4 w-4 accent-primary"> Hot offers only</label>
+            <label for="sort" class="sr-only">Sort by</label>
+            <select id="sort" class="field !w-auto !py-1.5"></select>
+            <div class="flex overflow-hidden rounded-md border border-gray-300" role="group" aria-label="View">
+              <button type="button" id="view-grid" class="px-3 py-1.5" aria-label="Grid view" aria-pressed="true"><i class="fa-solid fa-table-cells-large"></i></button>
+              <button type="button" id="view-list" class="border-l border-gray-300 px-3 py-1.5" aria-label="List view" aria-pressed="false"><i class="fa-solid fa-bars"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div id="chips" class="mt-3 flex flex-wrap items-center gap-2"></div>
+
+        <div id="results" class="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3"></div>
+
+        <nav id="pager" class="mt-6 flex flex-wrap items-center justify-center gap-2" aria-label="Pagination"></nav>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script src="assets/js/products-data.js" defer></script>
+  <script src="assets/js/store.js" defer></script>
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/listing-core.js" defer></script>
+  <script src="assets/js/products.js" defer></script>
+</body>
+</html>
